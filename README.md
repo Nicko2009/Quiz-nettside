@@ -1,0 +1,3 @@
+kilder:
+https://www.youtube.com/watch?v=PBcqGxrr9g8
+https://stackoverflow.com/questions/62594459/how-to-check-the-correct-answer-javascript-4-buttons
