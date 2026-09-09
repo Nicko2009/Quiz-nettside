@@ -25,3 +25,7 @@ const sporsmol = [
         riktigsvar: "For å finne feil tidlig"
     },
 ]
+let score = 0;
+let spørsmålnummer = 0;
+
+sporsmol.sort(() => Math.random() - 0.5);
