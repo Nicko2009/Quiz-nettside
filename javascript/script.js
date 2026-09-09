@@ -1,8 +1,7 @@
-function start() {
-document.getElementById("sporsmol").innerHTML = "spørsmål 1"
-document.getElementById("sporsmol1").innerHTML = "Hva er en IP-addresse"
-document.getElementById("svar1").innerHTML = "Et passord"
-document.getElementById("svar2").innerHTML = "Et type harddisk"
-document.getElementById("svar3").innerHTML = "Et programmeringsspråk"
-document.getElementById("svar4").innerHTML = "En type harddisk"
-}
+const sporsmol = [
+    "Hva er en viktig oppgave innen IT-drift?",
+    "Hvorfor er sikkerhetskopiering viktig?",
+    "Hva brukes en server til?",
+    "Hva kan beskytte et nettverk mot uønsket trafikk?",
+    "Hvorfor overvåker man servere og nettverk?"
+]
