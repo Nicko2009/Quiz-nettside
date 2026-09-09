@@ -1,7 +1,27 @@
 const sporsmol = [
-    "Hva er en viktig oppgave innen IT-drift?",
-    "Hvorfor er sikkerhetskopiering viktig?",
-    "Hva brukes en server til?",
-    "Hva kan beskytte et nettverk mot uønsket trafikk?",
-    "Hvorfor overvåker man servere og nettverk?"
+    {
+        spørsmål: "Hva er en viktig oppgave innen IT-drift?",
+        svar: ["Lage reklame", "Vedlikeholde og overvåke systemer","Lage nettsider","Planlegge markedsføring"],
+        riktigsvar: "Vedlikeholde og overvåke systemer"
+    },
+    {
+        spørsmål: "Hvorfor er sikkerhetskopiering viktig?",
+        svar: [ "Gir bedre ytelse", "Beskytter mot virus","Gjør det mulig å gjenopprette data","Fjerner behovet for passord"],
+        riktigsvar: "Gjør det mulig å gjenopprette data"
+    },
+    {
+        spørsmål: "Hva brukes en server til?",
+        svar: ["Tilby tjenester og lagre data", "Forbedre skjermkvalitet","Koble PC-en til strøm","Øke internettfarten"],
+        riktigsvar: "Tilby tjenester og lagre data"
+    },
+    {
+        spørsmål: "Hva kan beskytte et nettverk mot uønsket trafikk?",
+        svar: ["DNS-server", "Brannmur","DHCP-server","Switch"],
+        riktigsvar: "Brannmur"
+    },
+      {
+        spørsmål: "Hvorfor overvåker man servere og nettverk?",
+        svar: ["For å finne feil tidlig", "For å bruke mer lagring","For å redusere sikkerheten","For å stoppe oppdateringer"],
+        riktigsvar: "For å finne feil tidlig"
+    },
 ]
