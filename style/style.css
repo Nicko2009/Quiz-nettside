@@ -17,3 +17,12 @@ body{
     margin: 10px 0;
     border-radius: 4px;
 }
+#nesteKnapp {
+    background-color: #1579c6;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    margin: 20px auto 0 ;
+    border-radius: 4px;
+    display: none;
+}
