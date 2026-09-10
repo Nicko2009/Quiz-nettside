@@ -29,3 +29,35 @@ let score = 0;
 let spørsmålnummer = 0;
 
 sporsmol.sort(() => Math.random() - 0.5);
+
+const sporsmolElement = document.getElementById("sporsmal");
+const svarknapper = document.querySelectorAll(".knapp");
+const nesteKnapp = document.getElementById("nesteKnapp");
+
+function visSporsmol() {
+    const spørsmål = sporsmol[spørsmålnummer];
+
+    sporsmolElement.textContent = spørsmål.spørsmål;
+
+    svarknapper.forEach((knapp, index) => {
+        knapp.textContent = spørsmål.svar[index];
+    });
+}
+
+function sjekkSvar(choice){
+    const riktigSvar = sporsmol[spørsmålnummer].riktigsvar;
+
+    if (choice == riktigSvar) {
+        score += 1;
+        console.log("Riktig svar! Din score er: " + score);
+} else  {
+    console.log("Feil svar");
+    }
+    nesteKnapp.style.display = "block";
+};
+
+svarknapper.forEach((knapp) => {
+    knapp.addEventListener("click", () => {
+        sjekkSvar(knapp.textContent);
+    });
+});
