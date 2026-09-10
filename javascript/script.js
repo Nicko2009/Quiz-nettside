@@ -33,8 +33,48 @@ sporsmol.sort(() => Math.random() - 0.5);
 const sporsmolElement = document.getElementById("sporsmal");
 const svarknapper = document.querySelectorAll(".knapp");
 const nesteKnapp = document.getElementById("nesteKnapp");
+const scoreElement = document.getElementById("poeng");
 
 function visSporsmol() {
+    const spørsmål = sporsmol[spørsmålnummer];
+
+    sporsmolElement.textContent = spørsmål.spørsmål;
+
+    svarknapper.forEach((knapp, index) => {
+        knapp.textContent = spørsmål.svar[index];
+    });
+}
+
+function sjekkSvar(choice){
+    const riktigSvar = sporsmol[spørsmålnummer].riktigsvar;
+
+    if (choice == riktigSvar) {
+        score += 1;
+        scoreElement.textContent = "Score: " + score;
+} else  {
+    
+    }
+    nesteKnapp.style.display = "block";
+};
+function nesteSporsmol() {
+    spørsmålnummer += 1;
+
+    if (spørsmålnummer < sporsmol.length) {
+        visSporsmol();
+        nesteKnapp.style.display = "none";
+    }
+}
+
+nesteKnapp.addEventListener("click", nesteSporsmol);
+
+svarknapper.forEach((knapp) => {
+    knapp.addEventListener("click", () => {
+        sjekkSvar(knapp.textContent);
+    });
+});
+
+
+visSporsmol();function visSporsmol() {
     const spørsmål = sporsmol[spørsmålnummer];
 
     sporsmolElement.textContent = spørsmål.spørsmål;
