@@ -34,7 +34,59 @@ const sporsmolElement = document.getElementById("sporsmal");
 const svarknapper = document.querySelectorAll(".knapp");
 const nesteKnapp = document.getElementById("nesteKnapp");
 const scoreElement = document.getElementById("poeng");
+const tilbakemelding = document.getElementById("tilbakemelding");
 
+function visSporsmol() {
+    const spørsmål = sporsmol[spørsmålnummer];
+
+    sporsmolElement.textContent = spørsmål.spørsmål;
+
+    svarknapper.forEach((knapp, index) => {
+        knapp.textContent = spørsmål.svar[index];
+    });
+}
+
+function sjekkSvar(choice){
+    const riktigSvar = sporsmol[spørsmålnummer].riktigsvar;
+
+    if (choice == riktigSvar) {
+        score += 1;
+        scoreElement.textContent = "Score: " + score;
+    tilbakemelding.textContent = "Riktig svar!";
+} else  {
+    tilbakemelding.textContent = "Feil svar! Riktig svar er: " + riktigSvar;
+    }
+    svarknapper.forEach((knapp) => {
+        knapp.disabled = true;
+    });
+
+    nesteKnapp.style.display = "block";
+};
+function nesteSporsmol() {
+    spørsmålnummer += 1;
+
+    if (spørsmålnummer < sporsmol.length) {
+
+        svarknapper.forEach((knapp) => {
+            knapp.disabled = false;
+        });
+
+        visSporsmol();
+        nesteKnapp.style.display = "none";
+        tilbakemelding.textContent = "";
+    }
+}
+
+nesteKnapp.addEventListener("click", nesteSporsmol);
+
+svarknapper.forEach((knapp) => {
+    knapp.addEventListener("click", () => {
+        sjekkSvar(knapp.textContent);
+    });
+});
+
+
+visSporsmol();
 function visSporsmol() {
     const spørsmål = sporsmol[spørsmålnummer];
 
